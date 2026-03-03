@@ -5,69 +5,97 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Sovereign Tech Systems | م. مشعل الحربي</title>
     <style>
-        :root { --primary-color: #002d5f; --accent-color: #00a8cc; --text-color: #333; }
-        body { font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; margin: 0; color: var(--text-color); line-height: 1.6; background-color: #fff; }
-        header { background: var(--primary-color); color: white; padding: 2rem; text-align: center; border-bottom: 4px solid var(--accent-color); }
-        .container { max-width: 1000px; margin: auto; padding: 20px; }
-        .hero { text-align: center; padding: 50px 20px; background: #f4f7f9; border-radius: 10px; margin-bottom: 40px; }
-        .service-card { border: 1px solid #e1e8ed; padding: 20px; border-radius: 8px; margin-bottom: 20px; transition: 0.3s; }
-        .service-card:hover { box-shadow: 0 5px 15px rgba(0,0,0,0.1); }
-        .legal-section { margin-top: 60px; padding: 30px; border-top: 2px solid #eee; }
-        .legal-block { margin-bottom: 30px; }
-        h2 { color: var(--primary-color); border-right: 5px solid var(--accent-color); padding-right: 15px; }
-        footer { background: #1a1a1a; color: #ccc; text-align: center; padding: 40px 20px; margin-top: 50px; }
-        .final-greeting { font-style: italic; color: var(--accent-color); font-size: 1.2rem; margin-top: 20px; }
+        :root { --primary: #001f3f; --accent: #0074D9; --gold: #FFD700; --bg: #ffffff; }
+        * { box-sizing: border-box; scroll-behavior: smooth; }
+        body { font-family: 'Segoe UI', system-ui, -apple-system, sans-serif; margin: 0; color: #333; background: #fdfdfd; }
+        
+        /* شريط التنقل السيادي */
+        nav { background: var(--primary); padding: 15px 5%; display: flex; justify-content: space-between; align-items: center; position: sticky; top: 0; z-index: 1000; box-shadow: 0 2px 10px rgba(0,0,0,0.2); }
+        .logo { color: white; font-weight: 900; font-size: 1.5rem; text-decoration: none; border: 2px solid var(--accent); padding: 5px 15px; border-radius: 4px; }
+        .nav-links a { color: #ccc; text-decoration: none; margin-right: 20px; font-size: 0.9rem; transition: 0.3s; }
+        .nav-links a:hover { color: white; text-shadow: 0 0 5px var(--accent); }
+
+        header { background: linear-gradient(135deg, var(--primary) 0%, #003366 100%); color: white; padding: 100px 20px; text-align: center; }
+        .container { max-width: 1100px; margin: auto; padding: 40px 20px; }
+        
+        .hero h1 { font-size: 3rem; margin: 0; letter-spacing: 2px; }
+        .hero p { font-size: 1.2rem; opacity: 0.8; }
+
+        .section-title { text-align: center; margin-bottom: 50px; position: relative; }
+        .section-title::after { content: ''; display: block; width: 60px; height: 4px; background: var(--accent); margin: 10px auto; }
+
+        .grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 30px; }
+        .card { background: white; padding: 30px; border-radius: 12px; border: 1px solid #eee; transition: 0.4s; position: relative; overflow: hidden; }
+        .card:hover { transform: translateY(-10px); box-shadow: 0 15px 30px rgba(0,0,0,0.1); border-color: var(--accent); }
+        
+        .price { color: var(--accent); font-weight: bold; font-size: 1.3rem; margin-top: 15px; display: block; }
+        
+        .legal-box { background: #f9f9f9; padding: 40px; border-radius: 15px; margin-top: 60px; border-right: 8px solid var(--primary); }
+        .legal-item { margin-bottom: 30px; }
+        
+        .official-footer { background: #001529; color: #888; padding: 60px 20px; text-align: center; border-top: 5px solid var(--gold); }
+        .badge { display: inline-block; padding: 20px; border: 1px dashed var(--accent); border-radius: 8px; margin: 20px 0; color: #fff; }
     </style>
 </head>
 <body>
 
+<nav>
+    <a href="#" class="logo">SOVEREIGN TECH</a>
+    <div class="nav-links">
+        <a href="#services">الخدمات</a>
+        <a href="#legal">السياسات</a>
+        <a href="#contact">التوثيق</a>
+    </div>
+</nav>
+
 <header>
-    <h1>Sovereign Tech Systems</h1>
-    <p>حلول هندسية سيادية وتقنيات تدقيق متقدمة</p>
+    <div class="hero">
+        <h1>Sovereign Tech Systems</h1>
+        <p>نصيغ المستقبل بأكواد هندسية محصنة</p>
+    </div>
 </header>
 
 <div class="container">
-    <section class="hero">
-        <h2>مرحباً بك في آفاق السيادة التقنية</h2>
-        <p>بإدارة المهندس مشعل الحربي، نقدم رؤية استشارية برمجية تدعم التحول الرقمي الشامل وفق معايير عالمية.</p>
-    </section>
-
     <section id="services">
-        <div class="service-card">
-            <h3>1. بروتوكول التدقيق التقني (AI Auditor)</h3>
-            <p>فحص الأنظمة البرمجية وضمان كفاءة الأكواد والبيانات وحصانتها التقنية.</p>
-        </div>
-        <div class="service-card">
-            <h3>2. استشارات البنية السحابية</h3>
-            <p>تصميم وإدارة الاستضافات السحابية المتقدمة لضمان استمرارية الأعمال بنسبة 99.9%.</p>
+        <h2 class="section-title">خدماتنا الهندسية</h2>
+        <div class="grid">
+            <div class="card">
+                <h3>بروتوكول AI Auditor</h3>
+                <p>تدقيق شامل للأنظمة البرمجية لضمان الكفاءة والأمن السيادي.</p>
+                <span class="price">15,000 ريال سعودي</span>
+            </div>
+            <div class="card">
+                <h3>استشارات البنية السحابية</h3>
+                <p>تصميم وإدارة الخوادم المتقدمة للمشاريع الاستراتيجية.</p>
+                <span class="price">تبدأ من 5,000 ريال</span>
+            </div>
         </div>
     </section>
 
-    <section class="legal-section">
-        <div class="legal-block">
-            <h2>سياسة الخصوصية وأمن البيانات</h2>
-            <p>تلتزم منصة Sovereign Tech Systems بحماية بيانات العملاء وفق أعلى معايير التشفير العالمية. نقوم بجمع البيانات اللازمة فقط لإتمام عمليات التدقيق التقني والمدفوعات عبر بوابة الدفع المعتمدة. نحن لا نشارك بياناتك مع أي طرف ثالث خارج النطاق التشغيلي ووفقاً للأنظمة المعمول بها في المملكة العربية السعودية.</p>
+    <section id="legal" class="legal-box">
+        <h2 class="section-title">إطار العمل القانوني</h2>
+        <div class="legal-item">
+            <h3>سياسة الخصوصية</h3>
+            <p>حماية بياناتك هي التزامنا الأول. نتبع بروتوكولات تشفير عالمية لضمان سرية المعلومات عبر بوابة ميسر المعتمدة.</p>
         </div>
-
-        <div class="legal-block">
-            <h2>الشروط والأحكام</h2>
-            <p>بصفتك مستخدماً، تقر بأن الخدمات المقدمة هي استشارات هندسية وبرمجية متخصصة. يتم تفعيل الخدمة فور سداد الرسوم المقررة حسب العقد المتفق عليه. كافة الأكواد والتقارير الصادرة من أنظمتنا هي ملكية فكرية محمية ولا يجوز إعادة توزيعها دون إذن كتابي.</p>
+        <div class="legal-item">
+            <h3>سياسة الاسترجاع</h3>
+            <p>نظراً للطبيعة الاستشارية الرقمية، الرسوم غير مستردة بعد بدء التنفيذ، مع التزامنا الكامل بمعالجة أي ملاحظات تقنية.</p>
         </div>
+    </section>
 
-        <div class="legal-block">
-            <h2>سياسة الاسترجاع</h2>
-            <p>نظراً للطبيعة الرقمية والفورية للخدمات البرمجية والتقارير التقنية الاستشارية، فإن الرسوم المدفوعة غير مستردة بمجرد بدء عملية تنفيذ المشروع أو تسليم المخرجات الرقمية. في حال وجود خلل تقني في المنصة، نلتزم بإصلاحه خلال المدة الزمنية المتفق عليها دون تكاليف إضافية.</p>
+    <section id="contact" style="text-align: center; margin-top: 60px;">
+        <div class="badge">
+            <h3 style="color: var(--gold);">توثيق العمل الحر المعتمد</h3>
+            <p>المالك: م. مشعل الحربي</p>
+            <p style="font-size: 1.5rem; letter-spacing: 2px;">FL-680450063</p>
         </div>
     </section>
 </div>
 
 <footer>
     <p>جميع الحقوق محفوظة &copy; 2026 | Sovereign Tech Systems</p>
-    <p>المالك: م. مشعل الحربي (بموجب وثيقة عمل حر معتمدة)</p>
-    <div class="final-greeting">
-        نحن لا نبني مجرد أكواد، نحن نصيغ مستقبل السيادة الرقمية.<br>
-        شكراً لثقتكم في اختيار الجودة الهندسية الرفيعة.
-    </div>
+    <p style="color: var(--accent); font-style: italic;">السيادة الرقمية.. تبدأ من هنا.</p>
 </footer>
 
 </body>
